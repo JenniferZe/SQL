@@ -1,0 +1,28 @@
+--Create a clothing line database
+
+CREATE TABLE clothing_line (id INTEGER PRIMARY KEY, item TEXT, color INTEGER, price INTEGER, quantity INTEGER);
+
+INSERT INTO clothing_line VALUES (1, "shirts", "white", 5.99, 50);
+INSERT INTO clothing_line VALUES (2, "shirts", "black", 5.99, 50);
+INSERT INTO clothing_line VALUES (3, "shirts", "red", 5.99, 25);
+INSERT INTO clothing_line VALUES (4, "shirts", "gray", 5.99, 25);
+INSERT INTO clothing_line VALUES (5, "shirts", "beige", 5.99, 50);
+INSERT INTO clothing_line VALUES (6, "shirts", "blue", 5.99, 30);
+INSERT INTO clothing_line VALUES (7, "shirts", "green", 5.99, 30);
+INSERT INTO clothing_line VALUES (8, "shirts", "yellow", 5.99, 25);
+INSERT INTO clothing_line VALUES (9, "sweatpants", "black", 8.99, 50);
+INSERT INTO clothing_line VALUES (10, "sweatpants", "gray", 8.99, 50);
+INSERT INTO clothing_line VALUES (11, "leggings", "black", 7.99, 50);
+INSERT INTO clothing_line VALUES (12, "leggings", "blue", 7.99, 30);
+INSERT INTO clothing_line VALUES (13, "tanktops", "black", 3.99, 50);
+INSERT INTO clothing_line VALUES (14, "tanktops", "white", 3.99, 50);
+INSERT INTO clothing_line VALUES (15, "tanktops", "gray", 3.99, 25);
+
+--display the database ordered by price.
+SELECT * FROM clothing_line
+ORDER BY price desc;
+
+--what is the avg rice of items in the bulk section?
+SELECT AVG(price) "avg bulk item price"
+FROM clothing_line
+
