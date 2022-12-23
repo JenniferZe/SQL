@@ -1,3 +1,5 @@
+--Downloaded NFL draft picks from Khan Academy
+
 CREATE TABLE picks(
 	id INTEGER PRIMARY KEY,
 	pick_number INTEGER,
