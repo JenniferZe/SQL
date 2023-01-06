@@ -1,0 +1,44 @@
+#For this project, the first thing I did was download a Spotify database from Kaggle. 
+#Second, I created a Spotify table to insert data into. 
+#Lastly, I analyzed the data using SQL.
+
+CREATE TABLE BIT_DB.Spotifydata (
+id integer PRIMARY KEY,
+artist_name varchar NOT NULL,
+track_name varchar NOT NULL,
+track_id varchar NOT NULL,
+popularity integer NOT NULL,
+danceability decimal(4,3) NOT NULL,
+energy decimal(4,3) NOT NULL,
+song_key integer NOT NULL,
+loudness decimal(5,3) NOT NULL,
+song_mode integer NOT NULL,
+speechiness decimal(5,4) NOT NULL,
+acousticness decimal(6,5) NOT NULL,
+instrumentalness text NOT NULL,
+liveness decimal(5,4) NOT NULL,
+valence decimal(4,3) NOT NULL,
+tempo decimal(6,3) NOT NULL,
+duration_ms integer NOT NULL,
+time_signature integer NOT NULL )
+
+#1 Who are the Top 10 popular artiists by popularity?
+
+SELECT track_name, artist_name, popularity
+FROM BIT_DB.spotifydata
+ORDER BY popularity desc
+LIMIT 10
+
+#2 Who are the Top 5 artists with the longest songs?
+
+SELECT artist_name, track_name, duration_ms
+FROM BIT_DB.spotifydata
+ORDER BY duration_ms desc 
+LIMIT 5
+
+#3 Which artists on the list produced the loudest song?
+
+SELECT artist_name, track_name, loudness
+FROM BIT_DB.spotifydata
+ORDER BY loudness
+LIMIT 1
